@@ -1,16 +1,18 @@
 case=int(input())
 for i in range(case):
     group=list(map(int,input().split()))
-    a=len(group)-1
+    a=group[1:]
+    b=len(a)
     score_sum=0
     count=0
-    for i in range(a):
+    for i in range(b):
         score_sum+=group[i+1]
-        average=score_sum/group[0]
-    for i in range(a):
+    average=score_sum/group[0]
+    for i in range(b):
         if group[i+1]>average:
             count+=1
-    print('%.3f' %(count/group[0]*100)+'%')
+    rate=round(count/group[0]*100,3)
+    print('%.3f' %rate+'%')
     
     
         
